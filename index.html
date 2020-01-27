@@ -7,6 +7,10 @@
   <title>Vuebnb</title>
   <link rel="stylesheet" href="node_modules/open-sans-all/css/open-sans.css">
   <link rel="stylesheet" href="style.css" type="text/css">
+  <!-- font awesom -->
+  <link rel="stylesheet" href="node_modules/open-sans-all/css/open-sans.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 <div id="toolbar">
@@ -14,8 +18,28 @@
   <h1>vuebnb</h1>
 </div>
 <div id="app">
-  <div class="container"></div>
+  <div class="header">
+    <div class="header-img" :style="headerImageStyle">
+    </div>
+  </div>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>{{address}}</p>
+    <hr>
+    <div class="about">
+      <h3>About the listing</h3>
+      <p>{{about}}</p>
+    </div>
+
+    <div class="lists">
+      <div v-for="amenity in amenities">
+        {{amenity.title}}
+      </div>
+    </div>
+  </div>
 </div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="sample/data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
